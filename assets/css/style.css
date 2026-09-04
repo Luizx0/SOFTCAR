@@ -19,6 +19,15 @@ h1,h2,h3,h4{ font-family:var(--f-display); font-weight:600; line-height:1.12; ma
 .nav-links a{color:var(--c-chrome-300);text-decoration:none;padding:0.4rem 0}
 .nav-links a[aria-current="page"]{color:var(--c-amber-500);border-bottom:2px solid var(--c-amber-500)}
 
+/* Nav groups (families) */
+.nav-group{position:relative}
+.nav-group .group-toggle{background:none;border:none;color:var(--c-chrome-300);font-weight:600;cursor:pointer;padding:0.3rem 0.2rem}
+.nav-group .group-toggle:hover{color:var(--c-paper-000)}
+.nav-group .sub-links{list-style:none;margin:0;padding:0.4rem 0 0.6rem 0;position:absolute;left:0;top:100%;background:linear-gradient(180deg,rgba(16,20,24,0.98),rgba(15,17,20,0.98));border-radius:8px;box-shadow:0 6px 18px rgba(2,6,10,0.6);overflow:hidden;max-height:0;transition:max-height .22s ease,padding .18s;width:220px}
+.nav-group .sub-links li a{display:block;padding:0.6rem 0.9rem;color:var(--c-chrome-300);border-left:3px solid transparent}
+.nav-group.open .sub-links{max-height:480px;padding:0.6rem 0.6rem}
+.nav-group .sub-links li a:hover{color:var(--c-amber-500);border-left-color:var(--c-amber-500)}
+
 /* Hero */
 .hero{position:relative;background:var(--c-asphalt-900);color:var(--c-paper-000);padding:var(--sp-5) 0}
 .hero .wrap{display:grid;grid-template-columns:1.2fr 0.8fr;gap:var(--sp-4);align-items:end}
@@ -40,3 +49,16 @@ h1,h2,h3,h4{ font-family:var(--f-display); font-weight:600; line-height:1.12; ma
 .gallery-item .svg-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#6b6f76;font-family:var(--f-mono);font-size:0.95rem}
 
 @media (max-width:800px){.feature-grid{grid-template-columns:1fr}.hero .wrap{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Mobile nav toggle and responsive submenu handling */
+.nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-s);color:var(--c-paper-000);width:42px;height:38px;cursor:pointer;font-size:1.3rem}
+@media (max-width:860px){
+	.nav-toggle{display:block}
+	.nav-links{position:absolute;top:68px;left:0;right:0;background:var(--c-asphalt-900);flex-direction:column;gap:0;border-bottom:3px solid var(--c-amber-500);max-height:0;overflow:hidden;transition:max-height .25s ease}
+	.nav-links.is-open{max-height:640px}
+	.nav-links li{border-top:1px solid rgba(255,255,255,0.06)}
+	.nav-links a{display:block;padding:0.9rem var(--sp-3)}
+	.nav-group .sub-links{position:static;width:auto;box-shadow:none;background:transparent;padding:0}
+	.nav-group .group-toggle{width:100%;text-align:left;padding:0.9rem var(--sp-3)}
+	.nav-group .sub-links li a{padding-left:2.2rem}
+}

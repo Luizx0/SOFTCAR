@@ -10,6 +10,8 @@ O site da SOFTCAR foi criado com o objetivo de apresentar uma loja de veículos 
 
 O projeto reúne diferentes recursos estudados durante as aulas, incluindo:
 
+Nota: este repositório foi reorganizado — estilos e scripts ficam agora em `assets/css` e `assets/js` para facilitar manutenção.
+
 Estruturação de páginas com HTML;
 Formatação visual utilizando CSS;
 Interações e eventos utilizando JavaScript;
