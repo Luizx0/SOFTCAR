@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela técnica | SOFTCAR</title>
+<meta name="description" content="Catálogo técnico de peças por categoria, com faixa de preço e disponibilidade.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="site-header"></header>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="kicker">Catálogo</span>
+    <h1>Tabela técnica de peças</h1>
+    <p>5 colunas por 15 linhas, com categorias mescladas verticalmente e observações mescladas horizontalmente. Clique em uma linha para destacá-la.</p>
+  </div>
+</section>
+
+<main>
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="table-filter" id="table-filter"></div>
+      <div class="table-scroll">
+        <table class="data-table" id="specs-table">
+          <caption>Catálogo técnico — peças e acessórios SOFTCAR (valores de referência)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Categoria</th>
+              <th scope="col">Item</th>
+              <th scope="col">Especificação</th>
+              <th scope="col">Estoque</th>
+              <th scope="col">Preço aprox.</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr data-category="Motor">
+              <td class="cat-motor" rowspan="3"><strong>Motor</strong></td>
+              <td class="cat-motor">Óleo 5W30 sintético</td>
+              <td class="cat-motor">Troca a cada 10.000&nbsp;km</td>
+              <td class="cat-motor">Disponível</td>
+              <td class="cat-motor">R$ 89,90</td>
+            </tr>
+            <tr data-category="Motor">
+              <td class="cat-motor alt">Filtro de óleo</td>
+              <td class="cat-motor alt">Compatível com linha leve</td>
+              <td class="cat-motor alt">Disponível</td>
+              <td class="cat-motor alt">R$ 34,50</td>
+            </tr>
+            <tr data-category="Motor">
+              <td class="cat-motor" colspan="2">Correia dentada — revisar a cada 60.000&nbsp;km</td>
+              <td class="cat-motor">Sob encomenda</td>
+              <td class="cat-motor">R$ 210,00</td>
+            </tr>
+
+            <tr data-category="Suspensão">
+              <td class="cat-susp" rowspan="2"><strong>Suspensão</strong></td>
+              <td class="cat-susp">Amortecedor dianteiro (par)</td>
+              <td class="cat-susp">Uso urbano e rodoviário</td>
+              <td class="cat-susp">Disponível</td>
+              <td class="cat-susp">R$ 480,00</td>
+            </tr>
+            <tr data-category="Suspensão">
+              <td class="cat-susp alt" colspan="2">Amortecedor traseiro (par) — mesma marca do dianteiro</td>
+              <td class="cat-susp alt">Disponível</td>
+              <td class="cat-susp alt">R$ 460,00</td>
+            </tr>
+
+            <tr data-category="Freios">
+              <td class="cat-freios" rowspan="3"><strong>Freios</strong></td>
+              <td class="cat-freios">Pastilha dianteira</td>
+              <td class="cat-freios">Cerâmica, baixo ruído</td>
+              <td class="cat-freios">Disponível</td>
+              <td class="cat-freios">R$ 145,00</td>
+            </tr>
+            <tr data-category="Freios">
+              <td class="cat-freios alt">Disco de freio</td>
+              <td class="cat-freios alt">Ventilado, par</td>
+              <td class="cat-freios alt">Disponível</td>
+              <td class="cat-freios alt">R$ 320,00</td>
+            </tr>
+            <tr data-category="Freios">
+              <td class="cat-freios" colspan="2">Fluido de freio DOT4 — troca recomendada anual</td>
+              <td class="cat-freios">Disponível</td>
+              <td class="cat-freios">R$ 42,00</td>
+            </tr>
+
+            <tr data-category="Elétrica">
+              <td class="cat-eletrica" rowspan="2"><strong>Elétrica</strong></td>
+              <td class="cat-eletrica">Bateria 60Ah</td>
+              <td class="cat-eletrica">Garantia de 12 meses</td>
+              <td class="cat-eletrica">Disponível</td>
+              <td class="cat-eletrica">R$ 399,00</td>
+            </tr>
+            <tr data-category="Elétrica">
+              <td class="cat-eletrica alt" colspan="2">Kit de lâmpadas LED — farol e lanterna</td>
+              <td class="cat-eletrica alt">Disponível</td>
+              <td class="cat-eletrica alt">R$ 180,00</td>
+            </tr>
+
+            <tr data-category="Acessórios">
+              <td class="cat-acessorios" rowspan="4"><strong>Acessórios</strong></td>
+              <td class="cat-acessorios">Central multimídia</td>
+              <td class="cat-acessorios">Android Auto / CarPlay</td>
+              <td class="cat-acessorios">Disponível</td>
+              <td class="cat-acessorios">R$ 650,00</td>
+            </tr>
+            <tr data-category="Acessórios">
+              <td class="cat-acessorios alt">Câmera de ré</td>
+              <td class="cat-acessorios alt">Visão noturna</td>
+              <td class="cat-acessorios alt">Disponível</td>
+              <td class="cat-acessorios alt">R$ 120,00</td>
+            </tr>
+            <tr data-category="Acessórios">
+              <td class="cat-acessorios">Película automotiva</td>
+              <td class="cat-acessorios">Controle solar G20</td>
+              <td class="cat-acessorios">Disponível</td>
+              <td class="cat-acessorios">R$ 350,00</td>
+            </tr>
+            <tr data-category="Acessórios">
+              <td class="cat-acessorios alt">Tapete personalizado</td>
+              <td class="cat-acessorios alt">Jogo completo, 5 peças</td>
+              <td class="cat-acessorios alt">Disponível</td>
+              <td class="cat-acessorios alt">R$ 95,00</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.85rem;color:#7a7d84;margin-top:0.8rem;">Valores meramente ilustrativos, para fins do projeto acadêmico.</p>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script type="module" src="assets/js/pages/tabela.js"></script>
+</body>
+</html>
