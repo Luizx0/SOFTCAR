@@ -1,0 +1,43 @@
+/* ==========================================================================
+   SOFTCAR — Design Tokens
+   Tema: concessionária / oficina — identidade "painel de instrumentos".
+   ========================================================================== */
+:root {
+  /* Cor — paleta base (oficina + luzes de painel) */
+  --c-asphalt-900: #15161A;   /* fundo principal escuro */
+  --c-asphalt-800: #1E2025;   /* superfícies escuras (cards, nav) */
+  --c-steel-700:   #33363E;   /* bordas / divisores sobre fundo escuro */
+  --c-chrome-300:  #C7CCD6;   /* texto secundário sobre fundo escuro */
+  --c-offwhite-050:#F3F1EC;   /* fundo claro (seções alternadas) */
+  --c-paper-000:   #FFFFFF;   /* cartões sobre fundo claro */
+  --c-ink-900:     #1A1B1E;   /* texto principal sobre fundo claro */
+  --c-amber-500:   #FFB020;   /* acento primário — luz âmbar do painel */
+  --c-amber-600:   #E89A0C;
+  --c-tail-500:    #D6483F;   /* acento secundário — lanterna traseira, uso raro */
+  --c-teal-500:    #2FA5A0;   /* terceira cor de apoio — sinal de nível/óleo */
+
+  /* Tipografia */
+  --f-display: "Oswald", "Arial Narrow", sans-serif;   /* títulos — condensada, industrial */
+  --f-body:    "Work Sans", "Segoe UI", sans-serif;     /* texto corrido */
+  --f-mono:    "Roboto Mono", Consolas, monospace;      /* dados técnicos (tabela, código) */
+
+  --fs-h1: clamp(2.4rem, 4vw + 1rem, 4.4rem);
+  --fs-h2: clamp(1.6rem, 2vw + 1rem, 2.4rem);
+  --fs-h3: 1.3rem;
+  --fs-body: 1.05rem;
+  --fs-small: 0.9rem;
+
+  /* Espaçamento */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.75rem;
+  --sp-4: 3rem;
+  --sp-5: 5rem;
+
+  --radius-s: 3px;
+  --radius-m: 6px;
+  --max-width: 1180px;
+
+  --shadow-card: 0 1px 0 rgba(0,0,0,0.4);
+  --line: 1px solid var(--c-steel-700);
+}

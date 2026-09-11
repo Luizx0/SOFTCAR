@@ -1,0 +1,45 @@
+/**
+ * data/briefingData.js
+ * -----------------------------------------------------------------------
+ * Respostas ao formulário "Briefing Modelo.doc" fornecido pelo professor,
+ * aplicado à empresa fictícia SOFTCAR (loja de carros, peças e acessórios).
+ * -----------------------------------------------------------------------
+ */
+export const BRIEFING = [
+  { q: 'Ramo de atuação da empresa e tempo de mercado',
+    a: 'Comércio de veículos novos e seminovos, peças e acessórios automotivos. A SOFTCAR atua no mercado há 12 anos.' },
+  { q: 'Número de filiais/franquias',
+    a: 'Uma matriz e duas filiais na região metropolitana; não trabalha em regime de franquia.' },
+  { q: 'Produtos e/ou serviços oferecidos',
+    a: 'Venda de carros novos e seminovos, peças de reposição, acessórios, serviços de revisão e financiamento assistido.' },
+  { q: 'Endereço do site atual',
+    a: 'A empresa ainda não possui site — este projeto é a primeira versão da presença digital da SOFTCAR.' },
+  { q: 'Vantagens/desvantagens sobre os concorrentes',
+    a: 'Vantagem: atendimento consultivo e estoque próprio de peças. Desvantagem: menor porte frente às grandes redes de concessionárias.' },
+  { q: 'Referências de sites (outras empresas)',
+    a: 'Sites de concessionárias e marketplaces de veículos com catálogo por categoria, galeria de fotos e formulário de contato direto.' },
+  { q: 'Objetivos a serem alcançados',
+    a: 'Apresentar o catálogo de veículos e peças, transmitir credibilidade e facilitar o contato de potenciais clientes.' },
+  { q: 'Público-alvo',
+    a: 'Pessoas de 25 a 55 anos, com carteira de habilitação, interessadas em comprar ou trocar de veículo, e oficinas que compram peças em volume.' },
+  { q: 'Conteúdo do site',
+    a: 'Institucional (briefing), galeria de fotos, textos informativos, wireframes do projeto, links úteis do setor e tabela de especificações.' },
+  { q: 'Imagem a ser transmitida para os usuários',
+    a: 'Solidez e tradição combinadas com um visual moderno: paleta escura com detalhes em âmbar, tipografia condensada de inspiração automotiva, layout limpo e direto.' },
+  { q: 'Documentação disponível',
+    a: 'Logotipo em SVG, catálogo fotográfico do showroom e manuais técnicos das principais marcas trabalhadas.' },
+  { q: 'Tecnologias ou linguagens desejadas',
+    a: 'HTML5 semântico, CSS3 (Grid/Flexbox, variáveis de tema) e JavaScript (ES Modules), sem frameworks — conforme o conteúdo da disciplina.' },
+  { q: 'Ferramentas de marketing utilizadas atualmente',
+    a: 'Redes sociais (Instagram e Facebook) e indicação boca a boca; não há campanhas pagas ativas.' },
+  { q: 'Objeções',
+    a: 'Evitar tons pastéis ou "fofos"; manter a identidade sóbria e evitar excesso de elementos animados na tela.' },
+  { q: 'Mínimo e máximo de verba disponível para o projeto',
+    a: 'Projeto acadêmico sem orçamento monetário real — o "investimento" é o tempo da equipe.' },
+  { q: 'Prazo para desenvolvimento e/ou cronograma',
+    a: 'Entrega em 17/09/2026 até 23:59, com apresentação nos dias 18 e 25/09/2026.' },
+  { q: 'Contato (Nome/tel/email)',
+    a: 'Grupo responsável — dados de contato a preencher pela equipe antes do envio final.' },
+  { q: 'Observação',
+    a: 'Site desenvolvido para fins didáticos na disciplina de Desenvolvimento Web (Front-end), sem uso comercial real.' },
+];
