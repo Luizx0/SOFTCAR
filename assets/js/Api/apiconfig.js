@@ -1,7 +1,9 @@
 /**
  * config/apiConfig.js
  * -----------------------------------------------------------------------
- * Este arquivo contém a configuração da API do Pexels, que é usada
+ * Cole aqui sua chave real da API do Pexels.
+ * O valor padrão abaixo foi deixado como placeholder para evitar uma chave
+ * inválida em produção ou em ambiente local.
  * -----------------------------------------------------------------------
  */
 export const PEXELS_API_KEY = 'hJH38wGkjJ9pPSfvhCanVIJ29u4CBW2gkzUCsLlp1ar6u2exFSFYfTtC';

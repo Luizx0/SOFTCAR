@@ -35,6 +35,10 @@ async function searchQuery(query, perPage) {
   });
 
   if (!response.ok) {
+    if (response.status === 401) {
+      throw new Error(`Chave da API do Pexels inválida ou expirada para a busca "${query}"`);
+    }
+
     throw new Error(`Pexels respondeu ${response.status} para a busca "${query}"`);
   }
 
