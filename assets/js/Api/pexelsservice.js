@@ -1,13 +1,13 @@
 /**
  * services/pexelsService.js
  * -----------------------------------------------------------------------
- * Camada de infraestrutura (integraÁ„o externa): a ⁄NICA responsabilidade
- * deste mÛdulo È conversar com a API do Pexels e devolver os dados j· no
+ * Camada de infraestrutura (integra√ß√£o externa): a √öNICA responsabilidade
+ * deste m√≥dulo √© conversar com a API do Pexels e devolver os dados j√° no
  * formato que o resto do site espera. Nenhum componente de UI faz `fetch`
- * diretamente ó eles sÛ chamam `fetchCarPhotos()`.
+ * diretamente ‚Äî eles s√≥ chamam `fetchCarPhotos()`.
  *
- * Isso segue o mesmo princÌpio de `data/`: se um dia trocarmos o Pexels
- * pela Unsplash, por exemplo, sÛ este arquivo muda ó o `photoGallery.js`
+ * Isso segue o mesmo princ√≠pio de `data/`: se um dia trocarmos o Pexels
+ * pela Unsplash, por exemplo, s√≥ este arquivo muda ‚Äî o `photoGallery.js`
  * nem precisa saber que a fonte da foto mudou.
  * -----------------------------------------------------------------------
  */
@@ -20,7 +20,7 @@ function normalizePhoto(photo, query) {
   return {
     id: `pexels-${photo.id}`,
     src: photo.src.large,
-    alt: photo.alt && photo.alt.trim() ? photo.alt : `Carro ó ${query}`,
+    alt: photo.alt && photo.alt.trim() ? photo.alt : `Carro ‚Äî ${query}`,
     caption: photo.alt && photo.alt.trim() ? photo.alt : query,
     photographer: photo.photographer,
     sourceUrl: photo.url,
@@ -43,21 +43,24 @@ async function searchQuery(query, perPage) {
 }
 
 /**
- * Busca fotos de carros combinando v·rias palavras-chave (PEXELS_QUERIES),
- * para a galeria n„o ficar repetitiva. LanÁa um erro se a chave n„o
- * estiver configurada ó quem chama esta funÁ„o decide o que fazer nesse
+ * Busca fotos de carros combinando v√°rias palavras-chave (PEXELS_QUERIES),
+ * para a galeria n√£o ficar repetitiva. Lan√ßa um erro se a chave n√£o
+ * estiver configurada ‚Äî quem chama esta fun√ß√£o decide o que fazer nesse
  * caso (ver o try/catch em `components/photoGallery.js`).
  */
 export async function fetchCarPhotos() {
   if (!PEXELS_API_KEY || PEXELS_API_KEY.includes('COLE_SUA_CHAVE')) {
-    throw new Error('Chave da API do Pexels n„o configurada em assets/js/config/apiConfig.js');
+    throw new Error('Chave da API do Pexels n√£o configurada em assets/js/config/apiConfig.js');
   }
 
   const perQuery = Math.ceil(PEXELS_PER_PAGE / PEXELS_QUERIES.length);
 
+  // Promise.all dispara as buscas em paralelo (mais r√°pido do que uma
+  // busca esperar a outra terminar) e s√≥ continua quando TODAS terminarem.
   const resultsPerQuery = await Promise.all(
     PEXELS_QUERIES.map(query => searchQuery(query, perQuery))
   );
 
+  // .flat() junta os v√°rios arrays (um por busca) em um √∫nico array.
   return resultsPerQuery.flat();
 }
