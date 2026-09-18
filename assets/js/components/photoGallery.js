@@ -7,12 +7,23 @@
  */
 import { el, qs } from '../core/dom.js';
 import { PHOTOS } from '../data/photosData.js';
+import { fetchCarPhotos } from '../Api/pexelsservice.js';
 
-export function renderGallery(mountSelector = '#gallery-mount') {
+export async function renderGallery(mountSelector = '#gallery-mount') {
   const mount = qs(mountSelector);
   if (!mount) return;
 
   let openIndex = 0;
+  let galleryPhotos = [...PHOTOS];
+
+  try {
+    const photosFromApi = await fetchCarPhotos();
+    if (Array.isArray(photosFromApi) && photosFromApi.length > 0) {
+      galleryPhotos = photosFromApi;
+    }
+  } catch (error) {
+    console.warn('Não foi possível carregar fotos do Pexels, mantendo fallback local:', error.message);
+  }
 
   const lightbox = el('div', { class: 'lightbox', id: 'lightbox' }, [
     el('button', { class: 'lb-close', 'aria-label': 'Fechar', onclick: closeLightbox }, '✕'),
@@ -25,13 +36,13 @@ export function renderGallery(mountSelector = '#gallery-mount') {
   ]);
 
   const grid = el('div', { class: 'gallery-grid' },
-    PHOTOS.map((p, i) => el('figure', {
+    galleryPhotos.map((p, i) => el('figure', {
       class: 'gallery-item',
       tabindex: '0',
       onclick: () => openLightbox(i),
       onkeydown: (e) => { if (e.key === 'Enter') openLightbox(i); },
     }, [
-      el('img', { src: p.src, alt: `${p.caption} — ${p.category} SOFTCAR`, loading: 'lazy' }),
+      el('img', { src: p.src, alt: `${p.caption} — ${p.category || 'Carro'} SOFTCAR`, loading: 'lazy' }),
       el('figcaption', { class: 'cap' }, p.caption),
     ]))
   );
@@ -49,14 +60,14 @@ export function renderGallery(mountSelector = '#gallery-mount') {
     document.removeEventListener('keydown', onKey);
   }
   function step(dir) {
-    openIndex = (openIndex + dir + PHOTOS.length) % PHOTOS.length;
+    openIndex = (openIndex + dir + galleryPhotos.length) % galleryPhotos.length;
     updateLightbox();
   }
   function updateLightbox() {
-    const p = PHOTOS[openIndex];
+    const p = galleryPhotos[openIndex];
     qs('#lb-img', lightbox).src = p.src;
     qs('#lb-img', lightbox).alt = p.caption;
-    qs('#lb-cap', lightbox).textContent = `${p.caption} — foto ${openIndex + 1} de ${PHOTOS.length}`;
+    qs('#lb-cap', lightbox).textContent = `${p.caption} — foto ${openIndex + 1} de ${galleryPhotos.length}`;
   }
   function onKey(e) {
     if (e.key === 'Escape') closeLightbox();
